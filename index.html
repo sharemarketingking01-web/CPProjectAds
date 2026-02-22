@@ -23,7 +23,7 @@
     body {
       margin: 0;
       font-family: Arial, sans-serif;
-      background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+      background: linear-gradient(135deg, #000428, #004e92);
       color: white;
       text-align: center;
       padding: 40px 15px;
@@ -32,19 +32,30 @@
     .container {
       max-width: 420px;
       margin: auto;
+      animation: fadeIn 1.2s ease;
+    }
+
+    /* 🔥 PROFILE IMAGE WITH GRADIENT RING */
+    .image-wrapper {
+      display: inline-block;
+      padding: 5px;
+      border-radius: 50%;
+      background: linear-gradient(45deg, #ffd700, #ff6a00, #ffd700);
+      background-size: 200% 200%;
+      animation: gradientMove 3s ease infinite, glowPulse 2s infinite;
+      margin-bottom: 20px;
     }
 
     .profile-img {
-      width: 140px;
-      height: 140px;
+      width: 160px;
+      height: 160px;
       border-radius: 50%;
       object-fit: cover;
-      margin-bottom: 20px;
-      border: 3px solid #ffffff;
+      display: block;
     }
 
     h1 {
-      font-size: 26px;
+      font-size: 28px;
       margin-bottom: 10px;
     }
 
@@ -66,15 +77,18 @@
       font-weight: bold;
     }
 
+    /* 🔥 PULSING BUTTON */
     .btn {
-      background: #4CAF50;
+      background: #1877f2;
       color: white;
-      padding: 15px 28px;
+      padding: 16px 32px;
       font-size: 18px;
-      border-radius: 8px;
+      border-radius: 12px;
       display: inline-block;
       text-decoration: none;
-      margin-top: 20px;
+      margin-top: 25px;
+      animation: pulse 1.5s infinite;
+      box-shadow: 0 0 0 rgba(24,119,242,0.6);
     }
 
     .features {
@@ -85,9 +99,38 @@
 
     .disclaimer {
       font-size: 12px;
-      opacity: 0.7;
+      opacity: 0.75;
       margin-top: 20px;
       line-height: 1.5;
+    }
+
+    @keyframes pulse {
+      0% { box-shadow: 0 0 0 0 rgba(24,119,242,0.7); }
+      70% { box-shadow: 0 0 0 18px rgba(24,119,242,0); }
+      100% { box-shadow: 0 0 0 0 rgba(24,119,242,0); }
+    }
+
+    @keyframes glowPulse {
+      0% { box-shadow: 0 0 10px #ffd700; }
+      50% { box-shadow: 0 0 25px #ff6a00; }
+      100% { box-shadow: 0 0 10px #ffd700; }
+    }
+
+    @keyframes gradientMove {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
     }
   </style>
 </head>
@@ -96,43 +139,43 @@
 
   <div class="container">
 
-    <img src="profile.jpeg" class="profile-img" alt="Profile">
+    <!-- 🔥 PROFILE IMAGE -->
+    <div class="image-wrapper">
+      <img src="profile.jpeg" class="profile-img" alt="Profile">
+    </div>
 
     <h1>Work From Home Writing Projects</h1>
 
-    <h2>
-      Flexible • Remote • Project-Based Opportunities
-    </h2>
+    <h2>Flexible • Remote • Project-Based Work</h2>
 
     <p>
-      Looking for flexible remote work? <br>
-      Join our writing projects and earn based on the 
-      <span class="highlight">work you complete</span>.
+      Join our writing community and get access to 
+      <span class="highlight">remote project opportunities</span>.
     </p>
 
     <p>
-      ✔ No fixed salary <br>
-      ✔ Payment depends on project type, quality, and time spent <br>
-      ✔ Suitable for beginners and experienced writers
+      ✔ Work from anywhere <br>
+      ✔ Choose projects based on your availability <br>
+      ✔ Earnings depend on project type, time invested, and quality of work
     </p>
 
-    <a href="YOUR_LINK_HERE"
+    <a href="https://t.me/YOUR_LINK"
        target="_blank"
        class="btn"
        onclick="fbq('track','Lead')">
-       Apply Now
+       👉 Join Our Telegram Channel
     </a>
 
     <div class="features">
-      ✔ Remote Work <br>
+      ✔ Beginner Friendly <br>
+      ✔ Transparent Guidelines <br>
       ✔ Flexible Schedule <br>
-      ✔ Project-Based Earnings <br>
-      ✔ Transparent Guidelines
+      ✔ Project-Based Payments
     </div>
 
     <div class="disclaimer">
-      Earnings vary based on individual effort, project availability, 
-      and quality of work. This is not a guaranteed income opportunity.
+      Earnings vary for each individual and depend on work completed, 
+      project availability, and performance. This is not a guaranteed income opportunity.
     </div>
 
   </div>
